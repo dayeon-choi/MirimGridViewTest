@@ -21,7 +21,7 @@ public class GridAdapter  extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return imgRes.length;
     }
 
     @Override
