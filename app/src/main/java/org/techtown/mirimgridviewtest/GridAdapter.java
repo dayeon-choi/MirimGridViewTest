@@ -11,8 +11,9 @@ import android.widget.ImageView;
 public class GridAdapter  extends BaseAdapter {
     Context context;
     int[] imgRes = {R.drawable.post1,R.drawable.post2,R.drawable.post3,R.drawable.post4,R.drawable.post5,R.drawable.post6,R.drawable.post7,R.drawable.post8,
-                    R.drawable.post9,R.drawable.post10,R.drawable.post12,R.drawable.post13,R.drawable.post14,R.drawable.post15,R.drawable.post16
+                    R.drawable.post9,R.drawable.post10,R.drawable.post11,R.drawable.post12,R.drawable.post13,R.drawable.post14,R.drawable.post15,R.drawable.post16
                     };
+    String[] titleRes={"기생충","설국열차","택시운전사","군함도","반도","레미제라블","라라랜드","메이즈러너","부산행","살아있다","비긴어게인","어바웃타임","마션","어벤저스","어벤저스","셜록홈즈"};
 
     public GridAdapter(Context context){
         this.context=context;
@@ -37,7 +38,7 @@ public class GridAdapter  extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         final ImageView imgv=new ImageView(context);
-        imgv.setLayoutParams(new GridView.LayoutParams(300,400));
+        imgv.setLayoutParams(new GridView.LayoutParams(250,320));
         imgv.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imgv.setPadding(5,5,5,5);
         imgv.setImageResource(imgRes[position]);
@@ -49,8 +50,8 @@ public class GridAdapter  extends BaseAdapter {
                 AlertDialog.Builder dlg=new AlertDialog.Builder(context);
                 ImageView imgvPoster=dialogView.findViewById(R.id.imgv_dialog);
                 imgvPoster.setImageResource(imgRes[pos]);
-                dlg.setTitle("큰 포스터");
-                dlg.setIcon(R.mipmap.ic_launcher);
+                dlg.setTitle(titleRes[pos]);
+                dlg.setIcon(R.drawable.movieicon);
                 dlg.setView(dialogView);
                 dlg.setNegativeButton("닫기",null);
                 dlg.show();
